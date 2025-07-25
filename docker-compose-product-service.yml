@@ -5,9 +5,7 @@ services:
     image: ghcr.io/bgcheong/product-service:latest
     container_name: product-service-container
     ports: ["8091:8081"]
-    depends_on: 
-      - redis
-      - postgresql
+    restart: always
     networks:
       - service
     environment:

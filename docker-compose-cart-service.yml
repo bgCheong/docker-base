@@ -5,8 +5,7 @@ services:
     image: ghcr.io/bgcheong/cart-service:latest
     container_name: cart-service-container
     ports: ["8094:8084"]
-    depends_on: 
-      - redis
+    restart: always
     networks:
       - service
     environment:
