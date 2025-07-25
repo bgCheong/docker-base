@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  product-service:
+    image: ghcr.io/bgcheong/product-service:latest
+    container_name: product-service-container
+    ports: ["8091:8081"]
+    depends_on: 
+      - redis
+      - postgresql
+    networks:
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  service:
+    external: true

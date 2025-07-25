@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: ghcr.io/bgcheong/user-service:latest
+    container_name: user-service-container
+    ports: ["8092:8082"]
+    depends_on: 
+      - redis
+      - postgresql
+    networks:
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  service:
+    external: true
