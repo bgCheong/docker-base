@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  config-service:
+    image: ghcr.io/bgcheong/config-service:latest
+    container_name: config-service-container
+    ports: ["9999:8888"]
+    networks:
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  service:
+    external: true

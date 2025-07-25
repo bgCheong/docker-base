@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  eureka-service:
+    image: ghcr.io/bgcheong/eureka-service:latest
+    container_name: eureka-service-container
+    ports: ["9761:8761"]
+    networks:
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  service:
+    external: true

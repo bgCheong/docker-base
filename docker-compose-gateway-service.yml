@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  gateway-service:
+    image: ghcr.io/bgcheong/gateway-service:latest
+    container_name: gateway-service-container
+    ports: ["9000:8000"]
+    networks:
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  service:
+    external: true
