@@ -6,6 +6,7 @@ services:
     container_name: product-service-container
     ports: ["8091:8081"]
     restart: always
+    init: true
     networks:
       - service
     environment:

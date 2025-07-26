@@ -4,6 +4,7 @@ services:
   gateway-service:
     image: ghcr.io/bgcheong/gateway-service:latest
     container_name: gateway-service-container
+    init: true
     ports: ["9000:8000"]
     networks:
       - service

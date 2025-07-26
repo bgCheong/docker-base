@@ -4,6 +4,7 @@ services:
   config-service:
     image: ghcr.io/bgcheong/config-service:latest
     container_name: config-service-container
+    init: true
     ports: ["9999:8888"]
     networks:
       - service

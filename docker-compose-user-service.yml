@@ -4,6 +4,7 @@ services:
   user-service:
     image: ghcr.io/bgcheong/user-service:latest
     container_name: user-service-container
+    init: true
     ports: ["8092:8082"]
     restart: always
     networks:
