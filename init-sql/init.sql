@@ -22,3 +22,5 @@ CREATE DATABASE pay_service;
 CREATE USER pay_service_user WITH PASSWORD 'test123!';
 GRANT ALL PRIVILEGES ON DATABASE pay_service TO pay_service_user;
 GRANT USAGE, CREATE ON SCHEMA public TO pay_service_user;
+
+
